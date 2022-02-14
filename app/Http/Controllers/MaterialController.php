@@ -124,8 +124,17 @@ class MaterialController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Material $material)
     {
-        //
+        try {
+            
+            DB::beginTransaction();
+            $material->delete();
+            DB::commit();
+            return redirect()->route('dashboard.materials.index')->with('info', trans('lang.material_deleted'));
+        } catch (\Throwable $e) {
+            DB::rollBack();            
+            return redirect()->back()->with('error', trans('lang.material_error'));
+        } 
     }
 }

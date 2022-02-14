@@ -109,8 +109,17 @@ class ClientController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Client $client)
     {
-        //
+        try {
+            
+            DB::beginTransaction();
+            $client->delete();
+            DB::commit();
+            return redirect()->route('dashboard.clients.index')->with('info', trans('lang.client_deleted'));
+        } catch (\Throwable $e) {
+            DB::rollBack();            
+            return redirect()->back()->with('error', trans('lang.client_error'));
+        } 
     }
 }

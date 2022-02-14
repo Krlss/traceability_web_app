@@ -76,6 +76,14 @@
 <script src="{{ asset('plugins/datatable/responsive.bootstrap4.min.js') }}"></script>
 <script>
     $('#materials').DataTable({
+        "language": {
+            "lengthMenu": "Mostrar _MENU_ items por página",
+            "zeroRecords": "No hay datos, lo sentimos",
+            "info": "Página _PAGE_ de _PAGES_",
+            "infoEmpty": "No hay registros disponibles",
+            "infoFiltered": "(filtrado de _MAX_ registros totales)",
+            "search": "buscador",
+        },
         columnDefs: [{
             orderable: false,
             targets: -1,

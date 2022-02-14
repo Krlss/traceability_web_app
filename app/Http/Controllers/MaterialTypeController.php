@@ -109,8 +109,17 @@ class MaterialTypeController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(typeMaterials $typematerial)
     {
-        //
+        try {
+            
+            DB::beginTransaction();
+            $typematerial->delete();
+            DB::commit();
+            return redirect()->route('dashboard.typematerials.index')->with('info', trans('lang.typeMaterial_deleted'));
+        } catch (\Throwable $e) {
+            DB::rollBack();            
+            return redirect()->back()->with('error', trans('lang.typeMaterial_error'));
+        } 
     }
 }

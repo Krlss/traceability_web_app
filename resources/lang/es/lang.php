@@ -84,6 +84,11 @@ return [
      'table_supplier' => 'Proveedor',
      'table_type' => 'Tipo',
      
+     'client_deleted' => 'Cliente eliminado.',
+     'material_deleted' => 'Material eliminado.',
+     'provider_deleted' => 'Proveedor eliminado.',
+     'typeMaterial_deleted' => 'Tipo de material eliminado.',
+     'product_deleted' => 'Producto eliminado.',
      
      'table_created' => 'Creado hace',
      'table_updated' => 'Actualizado hace',

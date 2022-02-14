@@ -111,8 +111,17 @@ class ProviderController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Supplier $supplier)
     {
-        //
+        try {
+            
+            DB::beginTransaction();
+            $supplier->delete();
+            DB::commit();
+            return redirect()->route('dashboard.provides.index')->with('info', trans('lang.provider_deleted'));
+        } catch (\Throwable $e) {
+            DB::rollBack();            
+            return redirect()->back()->with('error', trans('lang.provider_error'));
+        } 
     }
 }
