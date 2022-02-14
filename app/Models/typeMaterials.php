@@ -17,4 +17,9 @@ class typeMaterials extends Model
         'name' => 'required'
     ];
 
+    public function materials()
+    {
+        return $this->hasMany(Material::class);
+    }
+
 }

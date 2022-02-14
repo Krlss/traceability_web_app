@@ -242,13 +242,13 @@ return [
             'active'    => ['typematerials', 'typematerials/create', 'typematerials/edit/{id}'],
             'route'         => 'dashboard.typematerials.index',
         ], 
-       /* [
-            'text'      => 'Material',
-            'icon'      => 'fas fa-list-alt',
-            'active'    => ['dashboard/reports', 'dashboard/reports/edit'],
-            'route'         => '',
-        ], 
         [
+            'text'      => 'Material',
+            'icon'      => 'fas fa-toolbox',
+            'active'    => ['materials', 'materials/create', 'materials/edit/{id}'],
+            'route'         => 'dashboard.materials.index',
+        ], 
+       /* [
             'text'      => 'Clientes',
             'icon'      => 'fas fa-list-alt',
             'active'    => ['dashboard/roles', 'dashboard/permissions'],

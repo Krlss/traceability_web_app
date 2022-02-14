@@ -16,4 +16,9 @@ class Supplier extends Model
     public static $rules = [
         'name' => 'required'
     ];
+
+    public function materials()
+    {
+        return $this->hasMany(Material::class);
+    }
 }
