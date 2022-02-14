@@ -16,10 +16,10 @@ return new class extends Migration
         Schema::create('sale', function (Blueprint $table) {
             $table->id();
             $table->integer('price');
-            $table->integer('user_id');
-            $table->integer('client_id');
-            /* $table->foreign('user_id')->references('id')->on('users');
-            $table->foreign('client_id')->references('id')->on('clients');  */
+            $table->unsignedBigInteger('user_id');
+            $table->unsignedBigInteger('client_id');
+            $table->foreign('user_id')->references('id')->on('users');
+            $table->foreign('client_id')->references('id')->on('clients'); 
             $table->timestamps();
         });
     }

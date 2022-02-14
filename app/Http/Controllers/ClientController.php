@@ -2,7 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\CreateClientRequest;
+use App\Http\Requests\UpdateClientRequest;
+use App\Models\Client;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class ClientController extends Controller
 {
@@ -13,7 +17,8 @@ class ClientController extends Controller
      */
     public function index()
     {
-        //
+        $clients = Client::orderBy('updated_at', 'DESC')->get();
+        return view('dashboard.client.index', compact('clients')); 
     }
 
     /**
@@ -23,7 +28,8 @@ class ClientController extends Controller
      */
     public function create()
     {
-        //
+        $client = null;
+        return view('dashboard.client.create', compact('client'));
     }
 
     /**
@@ -32,9 +38,22 @@ class ClientController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(CreateClientRequest $request)
     {
-        //
+        $input = $request->all();
+        
+        try {
+            DB::beginTransaction();
+
+            Client::create($input);
+
+            DB::commit();  
+
+            return redirect()->route('dashboard.clients.index')->with('info', trans('lang.client_created'));
+        } catch (\Throwable $th) {
+            DB::rollBack(); 
+            return redirect()->back()->with('error', trans('lang.client_error_created') . $th->getMessage());
+        }
     }
 
     /**
@@ -54,9 +73,9 @@ class ClientController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Client $client)
     {
-        //
+        return view('dashboard.client.edit', compact('client'));
     }
 
     /**
@@ -66,9 +85,22 @@ class ClientController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(UpdateClientRequest $request, Client $client)
     {
-        //
+        $input = $request->all();
+
+        try {
+            DB::beginTransaction();
+
+            $client->update($input);
+
+            DB::commit();
+
+            return redirect()->route('dashboard.clients.index')->with('info', trans('lang.client_updated'));
+        } catch (\Throwable $th) {
+            DB::rollBack(); 
+            return redirect()->back()->with('error', trans('lang.client_error_updated'));
+        }
     }
 
     /**

@@ -38,6 +38,29 @@ return [
      'table_material_name' => 'Nombre',
      'type_material' => 'Tipo de material',
 
+     'undefined' => 'Indefinido',
+
+     'client_list' => 'Lista de clientes',
+     'client_updated' => 'El cliente fué actualizado con éxito!',
+     'client_created' => 'El cliente fué creado con éxito!',
+     'client_create' => 'Registrar cliente',
+     'client_edit' => 'Editar registro de un cliente',
+     'client_name' => 'Nombre del cliente',
+     'client_email' => 'Correo electrónico',
+     'client_business' => 'Empresa',
+     'client_last_name' => 'Apellidos del cliente',
+     'client_phone' => 'Télefono',
+     'client_required' => 'El nombre del cliente es requerido.',
+     'client_name_required' => 'El nombre del cliente es requerido.',
+     'client_last_name_required' => 'El apellido del cliente es requerido.',
+     'client_email_required' => 'El correo electrónico del cliente es requerido.',
+     'table_client_id' => 'Cliente ID',
+     'table_client_name' => 'Nombre', 
+     'table_client_names' => 'Nombres', 
+     'table_client_phone' => 'Télefono', 
+     'table_client_email' => 'Correo electrónico', 
+     'table_client_business' => 'Empresa',
+
      'supplier' => 'Proveedor',
 
      'type_material_required' => 'Seleccione un tipo de material*',
@@ -52,6 +75,11 @@ return [
      'material_error_updated' => 'Ocurrió un error al actualizar los datos del material, intentalo de nuevo.',
      'material_updated' => 'Los datos del material fueron actualizados correctamente.',
      'material_created' => 'El material fué registrado correctamente.',
+
+     'client_error_created' => 'Ocurrió un error al registrar el nuevo cliente, intentalo de nuevo.',
+     'client_error_updated' => 'Ocurrió un error al actualizar los datos del cliente, intentalo de nuevo.',
+     'client_updated' => 'Los datos del cliente fueron actualizados correctamente.',
+     'client_created' => 'El cliente fué registrado correctamente.',
 
      'table_supplier' => 'Proveedor',
      'table_type' => 'Tipo',

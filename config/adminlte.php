@@ -237,23 +237,23 @@ return [
             'route'         => 'dashboard.provides.index'
         ], 
          [
-            'text'      => 'Tipo de material',
+            'text'      => 'Tipo de materiales',
             'icon'      => 'fas fa-layer-group',
             'active'    => ['typematerials', 'typematerials/create', 'typematerials/edit/{id}'],
             'route'         => 'dashboard.typematerials.index',
         ], 
         [
-            'text'      => 'Material',
+            'text'      => 'Materiales',
             'icon'      => 'fas fa-toolbox',
             'active'    => ['materials', 'materials/create', 'materials/edit/{id}'],
             'route'         => 'dashboard.materials.index',
         ], 
-       /* [
+         [
             'text'      => 'Clientes',
-            'icon'      => 'fas fa-list-alt',
-            'active'    => ['dashboard/roles', 'dashboard/permissions'],
-            'route'         => '', 
-        ],  */
+            'icon'      => 'fas fa-users',
+            'active'    => ['clients', 'clients/create', 'clients/edit/{id}'],
+            'route'         => 'dashboard.clients.index', 
+        ], 
     ],
 
 
