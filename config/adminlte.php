@@ -227,8 +227,8 @@ return [
         [
             'text' => 'Dashboard',
             'url'  => '/dashboard',
-            'icon'      => 'fas fa-tachometer-alt'
-        ], 
+            'icon'      => 'fa-solid fa-grid-horizontal'
+        ],
         ['header' => 'Administración'],
         [
             'text'      => 'Proveedores',
@@ -236,13 +236,13 @@ return [
             'active'    => ['provider', 'provider/create', 'provider/edit/{id}'],
             'route'         => 'dashboard.provides.index'
         ], 
-        /* [
+         [
             'text'      => 'Tipo de material',
-            'icon'      => 'fas fa-paw',
-            'active'    => ['dashboard/pets', 'dashboard/pets/create', 'dashboard/pets/edit'],
-            'route'         => '',
+            'icon'      => 'fas fa-layer-group',
+            'active'    => ['typematerials', 'typematerials/create', 'typematerials/edit/{id}'],
+            'route'         => 'dashboard.typematerials.index',
         ], 
-        [
+       /* [
             'text'      => 'Material',
             'icon'      => 'fas fa-list-alt',
             'active'    => ['dashboard/reports', 'dashboard/reports/edit'],
