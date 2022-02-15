@@ -102,7 +102,16 @@ return [
      'rememberme' => 'Recuérdame',
      'forgot_your_password' => '¿Olvidaste tu contraseña?',
      'login' => 'Iniciar sesión',
+     'register' => 'Registrarse',
 
      'select_image' => 'Selecciona una imagen',
-     'product_image' => 'Imagen del producto'
+     'product_image' => 'Imagen del producto',
+
+     'name' => 'Nombre',
+     'email' => 'Correo electrónico',
+     'address' => 'Dirección',
+     'password' => 'Contraseña',
+     'second_password' => 'Confirmar contraseña',
+     'already_registered' => '¿Ya te encuentras registrado?',
+     'without_account' => '¿No tienes cuenta?'
 ];

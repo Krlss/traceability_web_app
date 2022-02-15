@@ -227,6 +227,7 @@ return [
         [
             'text' => 'Dashboard',
             'url'  => '/',
+            'active' => ['dashboard'],
             'icon'      => 'fas fa-tachometer-alt'
         ],
         ['header' => 'Administración'],

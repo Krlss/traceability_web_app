@@ -21,6 +21,16 @@
     </div>
 
     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3">
+        
+        <div class="form-group flex-col">
+            {!! Form::label('material_name', trans('lang.material_name'), ['class' => '  ']) !!}
+            <div class="">
+                <p>
+                    {!! $material->name !!}
+                </p>
+            </div>
+        </div>
+
         <div class="form-group flex-col">
             {!! Form::label('table_supplier', trans('lang.table_supplier'), ['class' => '  ']) !!}
             <div class="">
@@ -38,15 +48,7 @@
                 </p>
             </div>
         </div>
-
-        <div class="form-group flex-col">
-            {!! Form::label('material_name', trans('lang.material_name'), ['class' => '  ']) !!}
-            <div class="">
-                <p>
-                    {!! $material->name !!}
-                </p>
-            </div>
-        </div>
+     
 
     </div>
 
