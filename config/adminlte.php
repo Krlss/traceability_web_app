@@ -243,8 +243,8 @@ return [
             'route'         => 'dashboard.typematerials.index',
         ], 
         [
-            'text'      => 'Materiales',
-            'icon'      => 'fas fa-toolbox',
+            'text'      => 'Productos',
+            'icon'      => 'fas fa-box',
             'active'    => ['materials', 'materials/create', 'materials/edit/{id}'],
             'route'         => 'dashboard.materials.index',
         ], 

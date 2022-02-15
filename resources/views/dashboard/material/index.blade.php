@@ -35,7 +35,7 @@
                     <th>{{ trans('lang.table_supplier') }}</th>
                     <th>{{ trans('lang.table_type') }}</th>
                     <th>{{ trans('lang.table_material_name') }}</th>
-                    <th>{{ trans('lang.table_created') }}</th>
+                    <th> QR CODE </th>
                     <th>{{ trans('lang.table_updated') }}</th>
                     <th>{{ trans('lang.actions') }}</th>
                 </tr>
@@ -46,9 +46,14 @@
                         <td>{{ $material->supplier->name }}</td>
                         <td>{{ $material->typeMaterial->name }}</td>
                         <td>{{ $material->name }}</td>
-                        <td>{{ $material->created_at->diffForHumans() }}</td>
+                        <td>{!! QrCode::size(50)->generate($material->id) !!}</td>
                         <td>{{ $material->updated_at->diffForHumans() }}</td>
                         <td class="flex items-center justify-center">
+
+                            <a href="{{ route('dashboard.materials.show', $material) }}">
+                                <i class="fas fa-eye text-gray-500 hover:text-gray-700 cursor-pointer"></i>
+                            </a>
+
                             <a href="{{ route('dashboard.materials.edit', $material) }}" class='btn btn-link'>
                                 <i class="fas fa-edit text-gray-500 hover:text-gray-700  cursor-pointer"></i>
                             </a>

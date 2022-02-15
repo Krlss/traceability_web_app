@@ -27,14 +27,14 @@ return [
      'table_typeMaterial_id' => 'Tipo de material ID',
      'table_typeMaterial_name' => 'Nombre',
 
-     'material_list' => 'Lista de materiales',
-     'material_updated' => 'El material fué actualizado con éxito!',
-     'material_created' => 'El material fué creado con éxito!',
-     'material_create' => 'Registrar material',
-     'material_edit' => 'Editar registro de un material',
-     'material_name' => 'Nombre del material',
-     'material_required' => 'El nombre del material es requerido.',
-     'table_material_id' => 'Material ID',
+     'material_list' => 'Lista de productos',
+     'material_updated' => 'El producto fué actualizado con éxito!',
+     'material_created' => 'El producto fué creado con éxito!',
+     'material_create' => 'Registrar producto',
+     'material_edit' => 'Editar registro de un producto',
+     'material_name' => 'Nombre del producto',
+     'material_required' => 'El nombre del producto es requerido.',
+     'table_material_id' => 'Producto ID',
      'table_material_name' => 'Nombre',
      'type_material' => 'Tipo de material',
 
@@ -71,10 +71,10 @@ return [
      'typeMaterial_updated' => 'Los datos del tipo de material fueron actualizados correctamente.',
      'typeMaterial_created' => 'El tipo de material fué registrado correctamente.',
 
-     'material_error_created' => 'Ocurrió un error al registrar el nuevo material, intentalo de nuevo.',
-     'material_error_updated' => 'Ocurrió un error al actualizar los datos del material, intentalo de nuevo.',
-     'material_updated' => 'Los datos del material fueron actualizados correctamente.',
-     'material_created' => 'El material fué registrado correctamente.',
+     'material_error_created' => 'Ocurrió un error al registrar el nuevo producto, intentalo de nuevo.',
+     'material_error_updated' => 'Ocurrió un error al actualizar los datos del producto, intentalo de nuevo.',
+     'material_updated' => 'Los datos del producto fueron actualizados correctamente.',
+     'material_created' => 'El producto fué registrado correctamente.',
 
      'client_error_created' => 'Ocurrió un error al registrar el nuevo cliente, intentalo de nuevo.',
      'client_error_updated' => 'Ocurrió un error al actualizar los datos del cliente, intentalo de nuevo.',
@@ -85,7 +85,7 @@ return [
      'table_type' => 'Tipo',
      
      'client_deleted' => 'Cliente eliminado.',
-     'material_deleted' => 'Material eliminado.',
+     'material_deleted' => 'Producto eliminado.',
      'provider_deleted' => 'Proveedor eliminado.',
      'typeMaterial_deleted' => 'Tipo de material eliminado.',
      'product_deleted' => 'Producto eliminado.',
@@ -94,4 +94,7 @@ return [
      'table_updated' => 'Actualizado hace',
      'actions' => 'Acciones',
      'save' => 'Guardar',
+     'show_material' => 'Información del producto',
+
+     'QR_Code' => 'Código QR'
 ];

@@ -68,9 +68,9 @@ class MaterialController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Material $material)
     {
-        //
+        return view('dashboard.material.show', compact('material'));
     }
 
     /**
