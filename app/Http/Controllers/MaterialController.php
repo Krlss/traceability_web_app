@@ -54,8 +54,8 @@ class MaterialController extends Controller
 
            $product = Material::create($input);
 
-            if($request->file('stock_image')){
-                $url = Storage::put('public/posts', $request->file('stock_image'));
+            if($request->file('file')){
+                $url = Storage::disk('public')->put('posts', $request->file('file'));
 
                 $product->image()->create([
                     'url'=> $url
@@ -109,7 +109,7 @@ class MaterialController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateMaterialRequest $request, Material $material)
+    public function update(CreateMaterialRequest $request, Material $material)
     {
         $input = $request->all();
 
@@ -117,7 +117,24 @@ class MaterialController extends Controller
             DB::beginTransaction();
 
             $material->update($input);
+ 
+            if($request->file('file')){
+                $url = Storage::disk('public')->put('posts', $request->file('file'));
 
+                if($material->image){
+                    Storage::delete($material->image->url);
+
+                    $material->image->update([
+                        'url' => $url
+                    ]);
+                }else{
+                    $material->image()->create([
+                        'url' => $url
+                    ]);
+                }
+
+            } 
+                     
             DB::commit();
 
             return redirect()->route('dashboard.materials.index')->with('info', trans('lang.material_updated'));

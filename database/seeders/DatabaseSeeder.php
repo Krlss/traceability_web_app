@@ -6,6 +6,7 @@ use App\Models\User;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Storage;
 
 class DatabaseSeeder extends Seeder
 {
@@ -16,6 +17,9 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
+        Storage::deleteDirectory('public/posts');//Primero la elimina para no tener muchas carpetas con muchas imagenes
+        Storage::makeDirectory('public/posts'); //crea una carpeta en Storage
+        
         User::create([
             'name' => 'root',
             'email' =>  'root@root.com', 

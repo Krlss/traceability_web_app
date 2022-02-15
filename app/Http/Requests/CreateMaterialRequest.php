@@ -24,6 +24,14 @@ class CreateMaterialRequest extends FormRequest
      */
     public function rules()
     {
-        return Material::$rules;
+
+        $rules = [
+            'name' => 'required',
+            'type_material_id' => 'required',
+            'supplier_id' => 'required',
+            'file' => 'image'
+        ];
+
+        return $rules;
     }
 }

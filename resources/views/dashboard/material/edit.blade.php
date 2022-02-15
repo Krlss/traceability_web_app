@@ -22,7 +22,7 @@
     
     <div class="card-body">
 
-        {!! Form::model($material, ['route' => ['dashboard.materials.update', $material], 'autocomplete' => 'off', 'method' => 'put']) !!}
+        {!! Form::model($material, ['route' => ['dashboard.materials.update', $material], 'autocomplete' => 'off', 'method' => 'put', 'files' => true]) !!}
         <div class="row">
             @include('dashboard.material.fields')
         </div>

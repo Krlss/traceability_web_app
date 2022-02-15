@@ -43,11 +43,18 @@
             {!! Form::label('name', trans('lang.product_image'), ['class' => 'uppercase text-xs font-bold mb-2']) !!}
             <div class="flex items-center justify-center flex-col">
                 <div>
-                    <img width="200" height="200" name='picture' id="picture" src="" class="max-w-xs" />
+                    @isset($material->image)
+                        <img width="200" height="200" id="picture" src={{ asset('storage/' . $material->image->url) }} />
+                    @else
+                        <img width="200" height="200" id="picture" src="{{asset('not_image.jpg')}}" />
+                    @endisset
                 </div>
-                <label for="stock_image"
+                <label for="file"
                     class="uppercase text-xs font-bold mt-2 bg-blue-500 px-4 py-2 text-white cursor-pointer">{{ trans('lang.select_image') }}</label>
-                <input name="stock_image" id='stock_image' type="file" accept="image/*" hidden />
+                <input name="file" id='file' type="file" accept="image/*" hidden /> 
+                @error('file')
+                    <span class="text-danger">{{$message}}</span>
+                @enderror
             </div>
         </div>
     </div>
@@ -62,14 +69,13 @@
 
 @push('scripts_lib')
     <script>
-        document.getElementById("stock_image").addEventListener('change', changeImage);
+        document.getElementById("file").addEventListener('change', cambiarImagen);
 
-        function changeImage(event) {
+        function cambiarImagen(event) {
             var file = event.target.files[0];
-
             var reader = new FileReader();
             reader.onload = (event) => {
-                document.getElementById('picture').setAttribute('src', event.target.result);
+                document.getElementById("picture").setAttribute('src', event.target.result);
             };
             reader.readAsDataURL(file);
         }

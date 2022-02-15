@@ -1,7 +1,23 @@
 <div>
     <div class="form-group w-full flex justify-center items-center">
-        {!! QrCode::size(175)->generate('Nombre del producto: ' . $material->name . '
-        Tipo del material: ' . $material->typeMaterial->name) !!}
+              
+        @isset($material->image)
+            <div class="mr-5">
+                <img class="max-w-xs" width="175" height="175" src={{ asset('storage/' . $material->image->url) }} />
+            </div>
+        @else
+            <div class="mr-5">
+                <img class="max-w-xs" width="175" height="175" src="{{ asset('not_image.jpg') }}" />
+            </div>
+        @endisset
+
+        {!! QrCode::size(175)->generate(
+    'Nombre del producto: ' .
+        $material->name .
+        '
+        Tipo del material: ' .
+        $material->typeMaterial->name,
+) !!}
     </div>
 
     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3">
@@ -51,7 +67,7 @@
                     {!! $material->updated_at !!}
                 </p>
             </div>
-        </div> 
+        </div>
 
     </div>
 </div>
