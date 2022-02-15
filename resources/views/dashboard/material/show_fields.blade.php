@@ -1,6 +1,7 @@
 <div>
     <div class="form-group w-full flex justify-center items-center">
-        {!! QrCode::size(175)->generate($material->id) !!}
+        {!! QrCode::size(175)->generate('Nombre del producto: ' . $material->name . '
+        Tipo del material: ' . $material->typeMaterial->name) !!}
     </div>
 
     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3">

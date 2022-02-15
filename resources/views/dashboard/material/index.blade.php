@@ -46,7 +46,7 @@
                         <td>{{ $material->supplier->name }}</td>
                         <td>{{ $material->typeMaterial->name }}</td>
                         <td>{{ $material->name }}</td>
-                        <td>{!! QrCode::size(50)->generate($material->id) !!}</td>
+                        <td>{!! QrCode::size(75)->generate('Nombre del producto: ' . $material->name . "\n" .'Tipo del material: ' . $material->typeMaterial->name . "\n" . 'Proveedor: ' . $material->supplier->name) !!}</td>
                         <td>{{ $material->updated_at->diffForHumans() }}</td>
                         <td class="flex items-center justify-center">
 

@@ -102,4 +102,7 @@ return [
      'rememberme' => 'Recuérdame',
      'forgot_your_password' => '¿Olvidaste tu contraseña?',
      'login' => 'Iniciar sesión',
+
+     'select_image' => 'Selecciona una imagen',
+     'product_image' => 'Imagen del producto'
 ];

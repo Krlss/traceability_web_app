@@ -31,4 +31,9 @@ class Material extends Model
         return $this->belongsTo(Supplier::class);
     }
 
+    //Relacion uno a uno polimorfica
+    public function image(){
+        return $this->morphOne(Image::class, 'imageable');
+    }
+
 }

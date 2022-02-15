@@ -20,7 +20,7 @@
     @endif
 
     <div class="card-body">
-        {!! Form::open(['route' => 'dashboard.materials.store']) !!}
+        {!! Form::open(['route' => 'dashboard.materials.store', 'files' => true]) !!}
         <div class="row">
             @include('dashboard.material.fields')
         </div>

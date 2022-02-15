@@ -226,8 +226,8 @@ return [
     'menu' => [
         [
             'text' => 'Dashboard',
-            'url'  => '/dashboard',
-            'icon'      => 'fa-solid fa-grid-horizontal'
+            'url'  => '/',
+            'icon'      => 'fas fa-tachometer-alt'
         ],
         ['header' => 'Administración'],
         [

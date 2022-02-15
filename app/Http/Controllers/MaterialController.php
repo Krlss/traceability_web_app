@@ -9,6 +9,7 @@ use App\Models\Supplier;
 use App\Models\typeMaterials;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Storage;
 
 class MaterialController extends Controller
 {
@@ -51,7 +52,15 @@ class MaterialController extends Controller
         try {
             DB::beginTransaction();
 
-            Material::create($input);
+           $product = Material::create($input);
+
+            if($request->file('stock_image')){
+                $url = Storage::put('public/posts', $request->file('stock_image'));
+
+                $product->image()->create([
+                    'url'=> $url
+                ]);
+            }
 
             DB::commit();  
 
