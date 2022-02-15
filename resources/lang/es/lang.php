@@ -96,5 +96,10 @@ return [
      'save' => 'Guardar',
      'show_material' => 'Información del producto',
 
-     'QR_Code' => 'Código QR'
+     'QR_Code' => 'Código QR',
+     'email' => 'Correo electrónico',
+     'password' => 'Contraseña',
+     'rememberme' => 'Recuérdame',
+     'forgot_your_password' => '¿Olvidaste tu contraseña?',
+     'login' => 'Iniciar sesión',
 ];

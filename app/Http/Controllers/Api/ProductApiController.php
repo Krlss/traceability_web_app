@@ -32,7 +32,7 @@ class ProductApiController extends Controller
             $data['typeMaterial'] = $typeMaterial;
             
 
-            response()->json(['message'=>'Product data', 'data' => $data], 200);
+            return response()->json(['message'=>'Product data', 'data' => $data], 200);
 
         } catch (\Throwable $th) {
             return response()->json(['message'=>'Something went error', 'data' => []], 500);
